@@ -1,7 +1,21 @@
 {
   "root": true,
-  "extends": "next/core-web-vitals",
-  "plugins": ["testing-library"],
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  },
+  "plugins": [
+    "testing-library",
+    "@typescript-eslint"
+  ],
   "overrides": [
     // Only uses Testing Library lint rules in test files
     {
