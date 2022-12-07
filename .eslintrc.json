@@ -3,18 +3,26 @@
   "parser": "@typescript-eslint/parser",
   "extends": [
     "next/core-web-vitals",
+    "next",
+    "prettier",
     "eslint:recommended",
+    "plugin:@next/next/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": ["warn", {
+      "additionalHooks": "(useMyCustomHook|useMyOtherCustomHook)"
+    }]
   },
   "plugins": [
     "testing-library",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "react-hooks"
   ],
   "overrides": [
     // Only uses Testing Library lint rules in test files

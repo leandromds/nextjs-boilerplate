@@ -6,13 +6,13 @@ import Head from 'next/head';
 import createEmotionCache from '../cache';
 import theme from '../theme';
 
-const clientSideEmotionCache = createEmotionCache()
+const clientSideEmotionCache = createEmotionCache();
 
 interface CustomApp extends AppProps {
   emotionCache?: EmotionCache
-}
+};
 
-export default function CustomApp(props: AppProps) {
+export default function CustomApp(props: CustomApp) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
   return (
     <CacheProvider value={emotionCache}>
@@ -25,4 +25,4 @@ export default function CustomApp(props: AppProps) {
       </ThemeProvider>
     </CacheProvider>
   )
-}
+};
